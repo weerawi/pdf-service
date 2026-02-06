@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
-// Use chromium-min for production, puppeteer for development
+// Use chromium for production (Vercel), puppeteer for development
 let puppeteer: any;
 let chromium: any;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 if (isProduction) {
-  chromium = require('@sparticuz/chromium-min');
+  chromium = require('@sparticuz/chromium');
   puppeteer = require('puppeteer-core');
 } else {
   puppeteer = require('puppeteer');
