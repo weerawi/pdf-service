@@ -1,5 +1,6 @@
 export interface SalarySheetEmployee {
   employeeId: string;
+  projectDepartment: string;
   employeeName: string;
   jobTitle: string;
   basicSalary: number;
@@ -12,6 +13,8 @@ export interface SalarySheetEmployee {
     advance?: number;
     noPay?: number;
     other?: number;
+    depositTools?: number;
+    lossRecovery?: number;
   };
 }
 
@@ -30,6 +33,9 @@ export interface SalarySheetTemplateProps {
     totalNoPay: number;
     totalOther: number;
     totalNetSalary: number;
+  };
+  company?: {
+    companyName?: string;
   };
 }
 
